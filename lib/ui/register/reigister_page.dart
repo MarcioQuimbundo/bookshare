@@ -12,9 +12,8 @@ class RegisterPage extends StatefulWidget {
     stops: null,
     colors: [
       // Colors are easy thanks to Flutter's Colors class.
-
-      Colors.deepPurpleAccent,
-      Colors.purple,
+      Color(0xff462EB4),
+      Color(0xffB965D3)
     ],
   );
 
@@ -60,7 +59,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
               SizedBox(
-                height: 70,),
+                height: 70,
+              ),
               Form(
                 child: Column(
                   children: <Widget>[
