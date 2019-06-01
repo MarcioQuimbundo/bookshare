@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key key}) : super(key: key);
@@ -30,144 +31,141 @@ class _RegisterPageState extends State<RegisterPage> {
         decoration: BoxDecoration(
           gradient: RegisterPage.GRBOOKSHARE,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 100,
-            ),
-            Text(
-              "BookShare",
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Form(
-              child: Column(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                      decoration: InputDecoration(
-                        hasFloatingPlaceholder: true,
-                        labelText: "username",
-                        labelStyle:
-                            TextStyle(color: Colors.white, fontSize: 16),
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                      decoration: InputDecoration(
-                        hasFloatingPlaceholder: true,
-                        labelText: "Username",
-                        labelStyle:
-                            TextStyle(color: Colors.white, fontSize: 16),
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                      decoration: InputDecoration(
-                        hasFloatingPlaceholder: true,
-                        labelText: "E-mail",
-                        labelStyle:
-                            TextStyle(color: Colors.white, fontSize: 16),
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                      decoration: InputDecoration(
-                        hasFloatingPlaceholder: true,
-                        labelText: "Password",
-                        labelStyle:
-                            TextStyle(color: Colors.white, fontSize: 16),
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                      decoration: InputDecoration(
-                        hasFloatingPlaceholder: true,
-                        labelText: "Confirm Password",
-                        labelStyle:
-                            TextStyle(color: Colors.white, fontSize: 16),
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
+                  Icon(
+                    FontAwesomeIcons.bookOpen,
+                    size: 70,
+                    color: Colors.white,
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 5,
                   ),
-                  Container(
-                    height: 50,
-                    width: size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    padding: const EdgeInsets.only(left: 16, top: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Registar'.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                  Text(
+                    'Book Share',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'Georgia',
+                        fontWeight: FontWeight.bold),
+                  )
                 ],
               ),
-            ),
-          ],
+              SizedBox(
+                height: 70,),
+              Form(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: size.width,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border(
+                              bottom: BorderSide(
+                                  width: 2,
+                                  color: Colors.white,
+                                  style: BorderStyle.solid))),
+                      child: TextField(
+                        style: TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Username',
+                            hintStyle: TextStyle(color: Colors.white70)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: size.width,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border(
+                              bottom: BorderSide(
+                                  width: 2,
+                                  color: Colors.white,
+                                  style: BorderStyle.solid))),
+                      child: TextField(
+                        obscureText: true,
+                        style: TextStyle(color: Colors.white70),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'E-mail',
+                            hintStyle: TextStyle(color: Colors.white70)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: size.width,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border(
+                              bottom: BorderSide(
+                                  width: 2,
+                                  color: Colors.white,
+                                  style: BorderStyle.solid))),
+                      child: TextField(
+                        obscureText: true,
+                        style: TextStyle(color: Colors.white70),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: Colors.white70)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: size.width,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border(
+                              bottom: BorderSide(
+                                  width: 2,
+                                  color: Colors.white,
+                                  style: BorderStyle.solid))),
+                      child: TextField(
+                        obscureText: true,
+                        style: TextStyle(color: Colors.white70),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Confirm Password',
+                            hintStyle: TextStyle(color: Colors.white70)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text('Register'.toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
