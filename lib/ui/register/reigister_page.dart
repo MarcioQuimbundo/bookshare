@@ -27,6 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Container(
         decoration: BoxDecoration(
           gradient: RegisterPage.GRBOOKSHARE,
