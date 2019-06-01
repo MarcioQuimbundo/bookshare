@@ -8,8 +8,8 @@ Data: 01/06/2019
 O desafio organizado pela Comunidade Internacional de Flutter será realizado em vários lugares do mundo no mesmo dia (Hoje) e tem como objetivo disseminar a nova tecnologia da Google.
 
 ![UI](preview.png)
-![UI](2.jpg)
-![UI](3.jpg)
+![Uq](2.jpg)
+![Uq](3.jpg)
 
 A new Flutter project.
 
