@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class IconLocation extends StatefulWidget {
   IconLocation({
@@ -10,7 +11,6 @@ class IconLocation extends StatefulWidget {
     this.size = 50.0,
     this.itemBuilder,
     this.duration = const Duration(milliseconds: 2400),
-    this.icon
   })  : assert(
             !(itemBuilder is IndexedWidgetBuilder && color is Color) &&
                 !(itemBuilder == null && color == null),
@@ -22,7 +22,6 @@ class IconLocation extends StatefulWidget {
   final double size;
   final IndexedWidgetBuilder itemBuilder;
   final Duration duration;
-  final IconData icon;
 
   @override
   _SpinKitPumpingHeartState createState() => _SpinKitPumpingHeartState();
@@ -61,7 +60,11 @@ class _SpinKitPumpingHeartState extends State<IconLocation>
   Widget _itemBuilder(int index) {
     return widget.itemBuilder != null
         ? widget.itemBuilder(context, index)
-        : Icon(widget.icon, size:  widget.size);
+        : Icon(
+          FontAwesomeIcons.bookOpen,
+          size: widget.size,
+          color: Colors.white,
+        );
   }
 }
 

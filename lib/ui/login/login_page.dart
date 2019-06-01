@@ -1,4 +1,5 @@
 import 'package:bookshare/ui/login/icon-animated.dart';
+import 'package:bookshare/ui/register/reigister_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -36,12 +37,11 @@ class _LoginPageState extends State<LoginPage> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.bookOpen,
-                          size:100,
-                       color: Colors.white,
+                        IconLocation(
+                          size: 100,
+                          color: Colors.white,
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(height: 20,),
                         Text(
                           'Book Share',
                           style: TextStyle(
@@ -166,9 +166,16 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(height: 50,),
-                    Text(
-                      'Ainda não tens uma conta ? Criar conta',
-                      style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => RegisterPage())
+                        );
+                      },
+                      child: Text(
+                        'Ainda não tens uma conta ? Criar conta',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     )
                 ],
               ),
