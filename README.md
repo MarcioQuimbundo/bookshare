@@ -1,5 +1,12 @@
 # bookshare
 
+#Hack19 - International Flutter Hackathon
+
+Local: Digital Factory 
+Data: 01/06/2019
+
+O desafio organizado pela Comunidade Internacional de Flutter será realizado em vários lugares do mundo no mesmo dia (Hoje) e tem como objetivo disseminar a nova tecnologia da Google.
+
 ![UI](preview.png)
 
 A new Flutter project.
