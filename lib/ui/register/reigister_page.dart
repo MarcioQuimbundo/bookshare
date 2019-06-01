@@ -1,3 +1,4 @@
+import 'package:bookshare/ui/login/icon-animated.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -40,19 +41,18 @@ class _RegisterPageState extends State<RegisterPage> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(
-                    FontAwesomeIcons.bookOpen,
-                    size: 70,
+                  IconLocation(
                     color: Colors.white,
+                    size: 100,
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 20,
                   ),
                   Text(
                     'Book Share',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 30,
                         fontFamily: 'Georgia',
                         fontWeight: FontWeight.bold),
                   )
