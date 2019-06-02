@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage>
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
         backgroundColor: Colors.white,
         title: Text(
