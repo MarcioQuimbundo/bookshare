@@ -151,15 +151,18 @@ class _RegisterPageState extends State<RegisterPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: 45,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Center(
-                        child: Text('Register'.toUpperCase(),
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold)),
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, "/home"),
+                                          child: Container(
+                        height: 45,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Center(
+                          child: Text('Register'.toUpperCase(),
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold)),
+                        ),
                       ),
                     ),
                   ],
