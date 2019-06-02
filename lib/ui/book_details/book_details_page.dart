@@ -1,21 +1,23 @@
+import 'package:bookshare/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class BooksProfile extends StatefulWidget{
-    @override
-    BooksProfileState createState()=>BooksProfileState();
-}
-class BooksProfileState extends State<BooksProfile>{
+class BookDetailsPage extends StatefulWidget {
   @override
-  void initState(){
+  BookDetailsPageState createState() => BookDetailsPageState();
+}
+
+class BookDetailsPageState extends State<BookDetailsPage> {
+  @override
+  void initState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.black,
-    statusBarIconBrightness: Brightness.dark,
-    statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.black,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.dark,
     ));
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -25,12 +27,12 @@ class BooksProfileState extends State<BooksProfile>{
       floatingActionButton: InkWell(
         onTap: () {},
         child: Container(
-          width: width/1.1,
+          width: width / 1.1,
           height: 60,
           margin: EdgeInsets.only(bottom: 10),
           alignment: FractionalOffset.center,
           decoration: BoxDecoration(
-            color: Colors.pink,
+            color: accentColor,
             borderRadius: BorderRadius.all(const Radius.circular(15.0)),
           ),
           child: Text('Requisitar Livro',
@@ -41,8 +43,14 @@ class BooksProfileState extends State<BooksProfile>{
         ),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+        centerTitle: true,
         title: Text(
           'Mitologia Nórdica',
           style: TextStyle(
@@ -59,7 +67,7 @@ class BooksProfileState extends State<BooksProfile>{
               size: 30,
             ),
           ),
-       ],
+        ],
       ),
       body: ListView(
         children: <Widget>[
@@ -88,7 +96,7 @@ class BooksProfileState extends State<BooksProfile>{
                 ),
               ),
             ),
-         ),
+          ),
           Row(
             children: <Widget>[
               Padding(
@@ -103,177 +111,184 @@ class BooksProfileState extends State<BooksProfile>{
               ),
             ],
           ),
-          Row(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    padding: EdgeInsets.all(1),
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: ExactAssetImage('assets/img/04.jpg',),
-                        fit: BoxFit.cover,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      padding: EdgeInsets.all(1),
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage(
+                            'assets/img/04.jpg',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
                       ),
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage('assets/img/03.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/img/02.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Container(
+                  //width: 40,
+                  padding:
+                      EdgeInsets.only(top: 30, bottom: 27, right: 20, left: 20),
+                  //height: 100,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      left: BorderSide(
+                        width: 3,
+                        color: Colors.grey[500],
                       ),
                     ),
-                  )
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: ExactAssetImage('assets/img/03.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/img/02.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                //width: 40,
-                padding:
-                    EdgeInsets.only(top: 30, bottom: 27, right: 20, left: 20),
-                //height: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    left: BorderSide(
-                      width: 3,
+                  ),
+                  child: Text(
+                    "Ver\nMais",
+                    style: TextStyle(
                       color: Colors.grey[500],
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                child: Text(
-                  "Ver\nMais",
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
-
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'Photos',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      padding: EdgeInsets.all(1),
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage(
+                            'assets/img/04.jpg',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage('assets/img/03.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/img/02.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Container(
+                  //width: 40,
+                  padding:
+                      EdgeInsets.only(top: 30, bottom: 27, right: 20, left: 20),
+                  //height: 100,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      left: BorderSide(
+                        width: 3,
+                        color: Colors.grey[500],
                       ),
                     ),
-                  )
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                //width: 40,
-                padding:
-                    EdgeInsets.only(top: 30, bottom: 27, right: 20, left: 20),
-                //height: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    left: BorderSide(
-                      width: 3,
+                  ),
+                  child: Text(
+                    "Ver\nMais",
+                    style: TextStyle(
                       color: Colors.grey[500],
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                child: Text(
-                  "Ver\nMais",
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
-
         ],
       ),
     );
